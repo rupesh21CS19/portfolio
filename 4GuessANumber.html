@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess a number</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-boxs;
+      }
+
+      html {
+        font-size: 62.5%;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+
+      .nav {
+        background-color: rgba(128, 128, 128, 0.301);
+        padding: 1rem 0;
+        text-align: center;
+        box-shadow: 0px 0px 3px 1px;
+      }
+
+      a {
+        text-decoration: none;
+        font-size: 3rem;
+        font-weight: bolder;
+        border: 2px solid black;
+        padding: 0.2rem 4rem;
+        color: black;
+        background-color: rgba(128, 128, 128, 0.384);
+        border-radius: 1rem;
+      }
+
+      a:hover {
+        background-color: white;
+        transition: all 0.3s;
+      }
+
+      .container {
+        margin: auto auto;
+        height: 65vh;
+        max-width: 60rem;
+        text-align: center;
+        font-size: 2.5rem;
+      }
+
+      #heading {
+        padding: 1rem 0;
+        color: white;
+        font-weight: bolder;
+        background-color: rgb(255, 0, 43);
+      }
+
+      .about {
+        font-size: 2.5rem;
+        text-align: center;
+      }
+
+      .about-bottom {
+        border: 2px solid black;
+        margin: 2rem auto;
+        font-weight: bolder;
+        text-decoration: underline;
+        max-width: 60rem;
+        line-height: 3rem;
+        color: rgb(53, 35, 1);
+        padding: 1rem 2rem;
+      }
+
+      form {
+        margin: auto auto;
+        display: flex;
+        text-align: center;
+        max-width: 50rem;
+      }
+
+      #input {
+        width: 100%;
+        height: 5rem;
+        border: 0.2rem solid orange;
+        border-right: transparent;
+        font-size: 3rem;
+        border-radius: 1rem;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+
+        padding-left: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+      }
+
+      #submit {
+        padding: 0.3rem 2rem;
+        border: 0.2rem solid orange;
+        font-size: 3rem;
+        font-weight: bolder;
+        cursor: pointer;
+        border-left: transparent;
+        border-radius: 1rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      #submit:hover {
+        background-color: gray;
+        color: white;
+        transition: all 0.3s;
+      }
+
+      #lowORhigh {
+        margin-top: 5rem;
+        color: black;
+      }
+
+      #start {
+        margin: 2rem;
+      }
+
+      #newGame {
+        background-color: orange;
+        padding: 0.5rem 3rem;
+        border-radius: 0.4rem;
+        cursor: pointer;
+        font-size: 3rem;
+        font-weight: bold;
+        margin-top: 3rem;
+      }
+
+      #lowORhigh {
+        text-decoration: underline;
+        font-size: 4rem;
+        font-weight: 600;
+      }
+
+      #newGame:hover {
+        background-color: gray;
+        box-shadow: 0 0 2px 2px gray;
+        color: white;
+      }
+
+      #myAttempts {
+        bottom: 1rem;
+        left: 1rem;
+        position: absolute;
+        padding: 0.2rem 3rem;
+        box-shadow: 0px 0px 10px 0.5px;
+        border-radius: 0.4rem;
+        border: none;
+        font-weight: bold;
+      }
+
+      #myAttempts:hover {
+        box-shadow: 0px 0px 10px 2px;
+        border: 1px solid black;
+        cursor: pointer;
+      }
+
+      .yourG {
+        bottom: 1rem;
+        left: 35rem;
+        position: absolute;
+        padding: 0.2rem 3rem;
+        box-shadow: 0px 0px 10px 0.5px;
+        border-radius: 0.4rem;
+        border: none;
+        font-weight: bold;
+      }
+
+      .yourG:hover {
+        box-shadow: 0px 0px 10px 2px;
+        border: 1px solid black;
+        cursor: pointer;
+      }
+
+      @media (max-width: 550px) {
+        html {
+          font-size: 60%;
+        }
+      }
+
+      @media (max-width: 500px) {
+        html {
+          font-size: 55%;
+        }
+      }
+
+      @media (max-width: 450px) {
+        html {
+          font-size: 48%;
+        }
+      }
+
+      @media (max-width: 400px) {
+        html {
+          font-size: 40%;
+        }
+      }
+
+      @media (max-width: 320px) {
+        html {
+          font-size: 30%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <a href="index.html">Project</a>
+    </div>
+    <div class="about">
+      <div id="heading">Number Guessing Game</div>
+      <div class="about-bottom">
+        <p>Try and guess a random number between 1 to 20</p>
+        <p>You have 5 attempts to guess the right number</p>
+      </div>
+    </div>
+    <div class="container">
+      <form>
+        <input type="number" placeholder="Guess A Number" id="input" />
+        <button type="submit" id="submit">Submit</button>
+      </form>
+      <p id="lowORhigh"></p>
+      <p id="start"></p>
+
+      <p id="myAttempts">Your Attempts: <span id="my">5</span></p>
+      <p class="yourG">Your Guesses: <span id="yourg"></span></p>
+    </div>
+  </body>
+  <script>
+    let random = Math.floor(Math.random() * 20 + 1);
+    console.log(random);
+    let yourG = document.querySelector(".yourG");
+    let yourg = document.querySelector("#yourg");
+    let my = document.querySelector("#my");
+    let = document.querySelector("#myAttempts");
+    let guess = document.querySelector("#input");
+    let submit = document.querySelector("#submit");
+    let form = document.querySelector("form");
+    let LorH = document.querySelector("#lowORhigh");
+    let start = document.querySelector("#start");
+    let container = document.querySelector(".container");
+
+    let myAttempt = 5;
+    let attemps = 0;
+    let Yguess = [];
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      let input = guess.value;
+      checkNumber(input);
+      guess.value = "";
+    });
+    // checkNumber
+    function checkNumber(input) {
+      console.log(input);
+      if (input == "") {
+        LorH.innerHTML = "Please Enter a number!!";
+      } else if (input < 1 || input > 20) {
+        LorH.innerHTML = "Please Enter a number between 1 to 20";
+      } else {
+        console.log("check", input);
+        Yguess.push(input); //push the value in array
+        validation(input); //validation check
+      }
+    }
+
+    // check validation
+    function validation(input) {
+      if (input == random) {
+        LorH.innerHTML = "Your guess is Right!!";
+        GameOver();
+      }
+      if (input > random) {
+        LorH.innerHTML = "Your guess is Greater!!";
+        Mattemp();
+        attemp();
+      }
+      if (input < random) {
+        LorH.innerHTML = "Your guess is Lower!!";
+        Mattemp();
+        attemp();
+      }
+    }
+
+    // your attemps
+    function Mattemp() {
+      myAttempt--;
+      if (myAttempt == 0) {
+        my.innerHTML = "Finish";
+      } else {
+        my.innerHTML = myAttempt;
+      }
+      yourg.innerHTML = Yguess;
+    }
+
+    // attemps
+    function attemp() {
+      attemps++;
+      if (attemps == 5) {
+        LorH.innerHTML = "Your attempts in Complete! Please Try Again!!";
+        GameOver();
+        alert(`The number was : ${random}`);
+      }
+    }
+
+    // GameOver
+    function GameOver() {
+      guess.setAttribute("disabled", "");
+      submit.setAttribute("disabled", "");
+      let span = document.createElement("span");
+      span.id = "newGame";
+      span.innerHTML = "Start";
+      start.append(span);
+      let newGame = document.querySelector("#newGame");
+
+      startGame();
+    }
+
+    // startGame
+    function startGame() {
+      newGame.innerHTML = "Start";
+
+      newGame.addEventListener("click", () => {
+        random = Math.floor(Math.random() * 20 + 1);
+        console.log("after", random);
+
+        guess.removeAttribute("disabled");
+        submit.removeAttribute("disabled");
+
+        LorH.innerHTML = "";
+
+        attemps = 0;
+        myAttempt = 5;
+
+        Yguess = [];
+        yourg.innerHTML = Yguess;
+
+        my.innerHTML = myAttempt;
+
+        start.children[0].remove();
+      });
+    }
+  </script>
+</html>
