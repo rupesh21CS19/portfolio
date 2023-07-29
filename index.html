@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="protfoliyo.css" />
+  </head>
+
+  <body>
+    <div class="nav">
+      <div class="logo"><img src="output-onlinepngtools.png" alt="" /></div>
+      <div class="menu">
+        <ul>
+          <li class="home">Home</li>
+          <li>
+            <a href="/project/project.html" class="PC">Projects</a>
+          </li>
+          <li><a href=".footer" class="PC">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- hero section  -->
+    <div class="hero">
+      <div class="hero-text">
+        <h1>
+          <span class="hi">Hi</span>
+          , I'm
+          <span class="name">Rupesh Kumar</span>
+        </h1>
+        <h2>Frontend Developer</h2>
+      </div>
+      <div class="img"><img src="1630141394663.png" alt="" /></div>
+    </div>
+    <!-- footer section  -->
+    <footer>
+      <h2>Let's work together...</h2>
+      <div class="link1">
+        <div class="linkedin icon">
+          <a
+            href="https://www.linkedin.com/in/rupesh-kumar-4b1359282/"
+            target="_blank"
+            ><img src="./link-icon/newlinkedin.png" alt=""
+          /></a>
+          <p>linkedin</p>
+        </div>
+        <div class="Twitter icon">
+          <a href="https://twitter.com/Rupesh21CS19" target="_blank"
+            ><img src="./link-icon/newtwiter.png" alt=""
+          /></a>
+          <p>Twitter</p>
+        </div>
+        <div class="Email icon">
+          <a href="#" target="_blank"
+            ><img src="./link-icon/newemail.png" alt=""
+          /></a>
+          <p>Email</p>
+        </div>
+      </div>
+      <div class="link2">
+        <div class="YourTube icon">
+          <a href="#" target="_blank"
+            ><img src="./link-icon/newYouttube.png" alt=""
+          /></a>
+          <p>Youtube</p>
+        </div>
+        <div class="Github icon">
+          <a href="https://github.com/rupesh21CS19" target="_blank"
+            ><img src="./link-icon/newGithub.png" alt=""
+          /></a>
+          <p>Github</p>
+        </div>
+      </div>
+    </footer>
+    <a href="https://google.com">fd</a>
+  </body>
+  <script>
+    let home = document.querySelector(".home");
+    home.style.borderBottom = "2px solid #fff700";
+
+    let target = document.querySelectorAll(".PC");
+
+    target.forEach((e) => {
+      e.addEventListener("mouseover", (e) => {
+        e.target.style.borderBottom = "2px solid #fff700";
+        // home.style.borderBottom = "2px solid #fff700"
+        console.log(e.target);
+        home.style.border = "none";
+      });
+    });
+
+    target.forEach((e) => {
+      e.addEventListener("mouseout", (e) => {
+        home.style.borderBottom = "2px solid #fff700";
+        e.target.style.border = "none";
+      });
+    });
+    console.log(target);
+  </script>
+</html>
