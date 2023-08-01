@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-boxs;
+      }
+
+      html {
+        font-size: 62.5%;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+
+      .nav {
+        background-color: rgba(128, 128, 128, 0.301);
+        padding: 1rem 0;
+        text-align: center;
+        box-shadow: 0px 0px 3px 1px;
+      }
+
+      a {
+        text-decoration: none;
+        font-size: 3rem;
+        font-weight: bolder;
+        border: 2px solid black;
+        padding: 0.2rem 4rem;
+        color: black;
+        background-color: rgba(128, 128, 128, 0.384);
+        border-radius: 1rem;
+      }
+
+      a:hover {
+        background-color: white;
+        transition: all 0.3s;
+      }
+      .box {
+        background: linear-gradient(45deg, #0a0a0a, #3a4452);
+        height: 90vh;
+        padding-top: 1rem;
+      }
+      .container {
+        width: max-content;
+        margin: auto auto;
+      }
+      .input {
+        margin: 2rem auto;
+      }
+      #input {
+        width: 90%;
+        font-size: 3rem;
+        height: 3rem;
+        text-align: end;
+        padding: 0 1rem;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        color: white;
+        font-weight: bolder;
+        cursor: pointer;
+      }
+
+      .cal {
+        box-shadow: 0 0 10px 0.1px gray;
+        border-radius: 1rem;
+        padding: 1rem 1rem;
+      }
+      .value {
+        display: flex;
+        justify-content: space-around;
+      }
+      .value > button {
+        font-size: 2rem;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 300rem;
+        /* padding: 2rem 2rem; */
+        margin: 2rem;
+        cursor: pointer;
+        font-weight: bolder;
+        border: transparent;
+      }
+      @media (max-width: 450px) {
+        html {
+          font-size: 55%;
+        }
+      }
+      @media (max-width: 380px) {
+        html {
+          font-size: 40%;
+        }
+      }
+      @media (max-width: 285px) {
+        html {
+          font-size: 35%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <a href="project.html">Project</a>
+    </div>
+    <div class="box">
+      <div class="container">
+        <div class="cal">
+          <div class="input">
+            <input type="text" id="input" />
+          </div>
+          <div class="value">
+            <button>AC</button><button>DL</button><button>%</button
+            ><button>/</button>
+          </div>
+          <div class="value">
+            <button>7</button><button>8</button><button>9</button
+            ><button>*</button>
+          </div>
+          <div class="value">
+            <button>4</button><button>5</button><button>6</button
+            ><button>-</button>
+          </div>
+          <div class="value">
+            <button>1</button><button>2</button><button>3</button
+            ><button>+</button>
+          </div>
+          <div class="value">
+            <button>00</button><button>0</button><button>.</button
+            ><button>=</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let input = document.getElementById("input");
+    let buttons = document.querySelectorAll("button");
+    let button = Array.from(buttons);
+
+    let string = "";
+    button.forEach((e) => {
+      e.addEventListener("click", (el) => {
+        if (el.target.innerHTML === "=") {
+          string = eval(string);
+          console.log(string);
+          input.value = string;
+        } else if (el.target.innerHTML === "AC") {
+          input.value = "";
+        } else if (el.target.innerHTML === "DL") {
+          string = string.substring(0, string.length - 1);
+          input.value = string;
+        } else {
+          string += el.target.innerHTML;
+          input.value = string;
+        }
+      });
+    });
+  </script>
+</html>
