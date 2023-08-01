@@ -214,6 +214,9 @@ footer .icon img:hover {
   .hero .img img {
     max-width: 200px;
   }
+  .hero .img img {
+    max-width: 250px;
+  }
 }
 
 @media screen and (max-width: 580px) {
