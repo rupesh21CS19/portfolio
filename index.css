@@ -177,6 +177,11 @@ footer .icon img:hover {
     font-size: 55%;
   }
 }
+@media screen and (height: 700px) {
+  html {
+    font-size: 20%;
+  }
+}
 
 @media screen and (max-width: 800px) {
   html {
@@ -207,7 +212,7 @@ footer .icon img:hover {
     text-align: center;
   }
   .hero .img img {
-    max-width: 300px;
+    max-width: 200px;
   }
 }
 
@@ -217,6 +222,9 @@ footer .icon img:hover {
   }
   li {
     padding: 0 0;
+  }
+  .hero {
+    font-size: 1rem;
   }
 }
 
@@ -233,15 +241,15 @@ footer .icon img:hover {
   }
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 420px) {
   html {
     font-size: 35%;
   }
 }
 
-@media screen and (max-width: 290px) {
+@media screen and (max-width: 300px) {
   html {
-    font-size: 35%;
+    font-size: 30%;
   }
 
   .hero .img img {
