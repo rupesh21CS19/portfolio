@@ -286,6 +286,7 @@ footer {
 .footer-right .icon {
   display: flex;
   justify-content: space-between;
+  align-items:center;
   gap: 0.4rem;
 }
 
