@@ -70,7 +70,7 @@ html {
   opacity: 0.6;
   /* -webkit-text-stroke: 1px #fff;
   color: transparent; */
-  line-height: 8vw;
+  line-height: 9vw;
   letter-spacing: 0.4;
 }
 .about .down {
@@ -84,7 +84,7 @@ html {
 }
 .about .down h6 {
   font-size: 1.7rem;
-  line-height: 3vh;
+  line-height: 5vh;
   text-align: right;
   color: white;
   opacity: 1;
