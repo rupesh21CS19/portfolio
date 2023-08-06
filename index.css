@@ -14,13 +14,35 @@ html {
   font-size: 62.5%;
   color: white;
   font-weight: 100;
-}
-.main {
-  width: 100%;
   background-color: black;
 }
 
+/* .mini-circle {
+  transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s;
+  background-color: white;
+  height: 1rem;
+  border-radius: 50%;
+  width: 1rem;
+  z-index: 9999;
+  position: absolute;
+} */
+
+.main {
+  background-color: black;
+  width: 100%;
+}
+
+.bounding {
+  overflow: hidden;
+  width: fit-content;
+}
+.boundelm {
+  transform: translateY(110%);
+}
+
 .hero {
+  background-color: black;
+  position: relative;
   width: 100%;
   height: 100vh;
   font-size: 1.4rem;
@@ -38,6 +60,8 @@ html {
   color: white;
 }
 
+/* ---------------about----------------- */
+
 .about {
   margin-top: 6rem;
   margin-left: 3rem;
@@ -46,18 +70,22 @@ html {
   opacity: 0.6;
   /* -webkit-text-stroke: 1px #fff;
   color: transparent; */
-  line-height: 13vw;
+  line-height: 8vw;
   letter-spacing: 0.4;
 }
 .about .down {
   margin-left: 15vw;
   width: fit-content;
-  line-height: 5vw;
+  height: fit-content;
+  line-height: 16vh;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 .about .down h6 {
   font-size: 1.7rem;
+  line-height: 3vh;
   text-align: right;
-  -webkit-text-stroke: 0.1px #fff;
   color: white;
   opacity: 1;
   letter-spacing: 0;
@@ -70,6 +98,9 @@ html {
   padding: 0 3rem;
   margin-top: 10rem;
   margin-bottom: 300rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 
 .hero-footer {
@@ -163,7 +194,7 @@ html {
   width: 25vw;
 }
 
-/* -----------------------about--------------------------- */
+/* -----------------------my-self--------------------------- */
 
 .my-self {
   width: 100%;
@@ -286,7 +317,6 @@ footer {
 .footer-right .icon {
   display: flex;
   justify-content: space-between;
-  align-items:center;
   gap: 0.4rem;
 }
 
