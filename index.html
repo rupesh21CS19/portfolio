@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>GameChangerWebsite</title>
+    <link rel="loco" href="loco.css" />
     <link rel="styleSheet" href="index.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
@@ -16,7 +17,10 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
+    <!-- <div class="mini-circle"></div> -->
+
     <div class="main">
       <!-- hero section  -->
       <div class="hero">
@@ -25,15 +29,25 @@
           <h3>MENU+</h3>
         </nav>
         <section class="about">
-          <h2>SOFTWARE</h2>
+          <div class="bounding">
+            <h2 class="boundelm">SOFTWARE</h2>
+          </div>
           <div class="down">
-            <h2>ENGINEER</h2>
-            <h6>THANKS FOR,SUPPORT</h6>
+            <div class="bounding">
+              <h2 class="boundelm">ENGINEER</h2>
+            </div>
+            <div class="bounding">
+              <h6 class="boundelm">THANKS YOU,SUPPORT</h6>
+            </div>
           </div>
         </section>
         <section class="about-2">
-          <h5>birth-data</h5>
-          <h5>july-9-2003</h5>
+          <div class="bounding">
+            <h5 class="boundelm">birth-data</h5>
+          </div>
+          <div class="bounding">
+            <h5 class="boundelm">july-9-2003</h5>
+          </div>
         </section>
         <section class="hero-footer">
           <a href="#">b.tech student <i class="ri-arrow-right-up-line"></i></a>
@@ -95,6 +109,8 @@
           <i class="ri-arrow-right-up-line"></i>
         </h2>
       </div>
+
+      <!-- footer  -->
       <footer>
         <div class="footer-left">
           <h2>2023&copy;</h2>
@@ -136,5 +152,14 @@
         </div>
       </footer>
     </div>
+    <!-- scripts  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
