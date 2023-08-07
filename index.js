@@ -39,3 +39,12 @@ function firstPage() {
     });
 }
 firstPage();
+
+// setTime
+
+let time = document.querySelector("#time");
+
+setInterval(() => {
+  let date = new Date().toLocaleTimeString();
+  time.innerHTML = date;
+}, 1000);
